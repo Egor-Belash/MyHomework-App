@@ -26,55 +26,62 @@ class ViewController: UIViewController {
         setupViewProperties()
         setupSubviews()
         setupConstraints()
-        
-        func setupViewProperties() {
-            imageView.image = UIImage(named: "33oajbebzxfjbz20zla5fwwq2bgr2g0r.jpeg")
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(imageView)
-        }
-                
-        func setupSubviews() {
-            label1.text = "My Home Control"
-            label1.textColor = .white
-            label1.font = UIFont.boldSystemFont(ofSize: 26)
-            label1.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(label1)
-            
-            inputUsername.placeholder = "Please enter username"
-            inputUsername.borderStyle = .roundedRect
-            inputUsername.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(inputUsername)
-            
-            inputPassword.placeholder = "Please enter password"
-            inputPassword.borderStyle = .roundedRect
-            inputPassword.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(inputPassword)
-            
-            username.text = "Username"
-            username.textColor = .white
-            username.font = UIFont.systemFont(ofSize: 17)
-            username.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(username)
-            
-            password.text = "Password"
-            password.textColor = .white
-            password.font = UIFont.systemFont(ofSize: 17)
-            password.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(password)
-            
-            buttonLogin.setTitle("Log in", for: .normal)
-            buttonLogin.setTitleColor( .black, for: .normal)
-            buttonLogin.backgroundColor = .white
-            buttonLogin.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(buttonLogin)
-            
-            buttonRegister.setTitle("Register", for: .normal)
-            buttonRegister.setTitleColor( .white, for: .normal)
-            buttonRegister.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(buttonRegister)
-        }
-                
     }
+    
+    func setupViewProperties() {
+        imageView.image = UIImage(named: "33oajbebzxfjbz20zla5fwwq2bgr2g0r.jpeg")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imageView)
+    }
+            
+    func setupSubviews() {
+        label1.text = "My Home Control"
+        label1.textColor = .white
+        label1.font = UIFont.boldSystemFont(ofSize: 30)
+        label1.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label1)
+        
+        inputUsername.placeholder = "Please enter username"
+        inputUsername.borderStyle = .roundedRect
+        inputUsername.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(inputUsername)
+        
+        inputPassword.placeholder = "Please enter password"
+        inputPassword.borderStyle = .roundedRect
+        inputPassword.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(inputPassword)
+        
+        username.text = "Username"
+        username.textColor = .white
+        username.font = UIFont.systemFont(ofSize: 17)
+        username.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(username)
+        
+        password.text = "Password"
+        password.textColor = .white
+        password.font = UIFont.systemFont(ofSize: 17)
+        password.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(password)
+        
+        buttonLogin.setTitle("Log in", for: .normal)
+        buttonLogin.setTitleColor( .black, for: .normal)
+        buttonLogin.backgroundColor = .white
+        buttonLogin.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        buttonLogin.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonLogin)
+        
+        buttonLogin.addTarget(self, action: #selector(pushTapped), for: .touchUpInside)
+            
+        buttonRegister.setTitle("Register", for: .normal)
+        buttonRegister.setTitleColor( .white, for: .normal)
+        buttonRegister.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        buttonRegister.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonRegister)
+            
+        buttonRegister.addTarget(self, action: #selector(presentButtonTapped), for: .touchUpInside)
+    }
+                
+
     func setupConstraints() {
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -103,9 +110,22 @@ class ViewController: UIViewController {
             
             buttonRegister.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buttonRegister.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            
         ])
 
     }
+    
+    // MARK: – Actions
+    
+    @objc private func pushTapped() {
+        let vc = SecondViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
+    @objc private func presentButtonTapped() {
+        let vc = ThirdViewController()
+        present(vc, animated: true)
+    }
+    
 }
 

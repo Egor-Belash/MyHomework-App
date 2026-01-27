@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		748844592F223F52000C4A6B /* Lesson_8_Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson_8_Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		748844592F223F52000C4A6B /* Lesson_8-9_Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lesson_8-9_Homework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7488446B2F223F53000C4A6B /* Exceptions for "Lesson_8_Homework" folder in "Lesson_8_Homework" target */ = {
+		7488446B2F223F53000C4A6B /* Exceptions for "Lesson_8_Homework" folder in "Lesson_8-9_Homework" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 748844582F223F52000C4A6B /* Lesson_8_Homework */;
+			target = 748844582F223F52000C4A6B /* Lesson_8-9_Homework */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -24,7 +24,7 @@
 		7488445B2F223F52000C4A6B /* Lesson_8_Homework */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				7488446B2F223F53000C4A6B /* Exceptions for "Lesson_8_Homework" folder in "Lesson_8_Homework" target */,
+				7488446B2F223F53000C4A6B /* Exceptions for "Lesson_8_Homework" folder in "Lesson_8-9_Homework" target */,
 			);
 			path = Lesson_8_Homework;
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 		7488445A2F223F52000C4A6B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				748844592F223F52000C4A6B /* Lesson_8_Homework.app */,
+				748844592F223F52000C4A6B /* Lesson_8-9_Homework.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		748844582F223F52000C4A6B /* Lesson_8_Homework */ = {
+		748844582F223F52000C4A6B /* Lesson_8-9_Homework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7488446C2F223F53000C4A6B /* Build configuration list for PBXNativeTarget "Lesson_8_Homework" */;
+			buildConfigurationList = 7488446C2F223F53000C4A6B /* Build configuration list for PBXNativeTarget "Lesson_8-9_Homework" */;
 			buildPhases = (
 				748844552F223F52000C4A6B /* Sources */,
 				748844562F223F52000C4A6B /* Frameworks */,
@@ -76,11 +76,11 @@
 			fileSystemSynchronizedGroups = (
 				7488445B2F223F52000C4A6B /* Lesson_8_Homework */,
 			);
-			name = Lesson_8_Homework;
+			name = "Lesson_8-9_Homework";
 			packageProductDependencies = (
 			);
 			productName = Lesson_8_Homework;
-			productReference = 748844592F223F52000C4A6B /* Lesson_8_Homework.app */;
+			productReference = 748844592F223F52000C4A6B /* Lesson_8-9_Homework.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 748844542F223F52000C4A6B /* Build configuration list for PBXProject "Lesson_8_Homework" */;
+			buildConfigurationList = 748844542F223F52000C4A6B /* Build configuration list for PBXProject "Lesson_8-9_Homework" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				748844582F223F52000C4A6B /* Lesson_8_Homework */,
+				748844582F223F52000C4A6B /* Lesson_8-9_Homework */,
 			);
 		};
 /* End PBXProject section */
@@ -150,7 +150,6 @@
 				INFOPLIST_FILE = Lesson_8_Homework/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -182,7 +181,6 @@
 				INFOPLIST_FILE = Lesson_8_Homework/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -326,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		748844542F223F52000C4A6B /* Build configuration list for PBXProject "Lesson_8_Homework" */ = {
+		748844542F223F52000C4A6B /* Build configuration list for PBXProject "Lesson_8-9_Homework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7488446F2F223F53000C4A6B /* Debug */,
@@ -335,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7488446C2F223F53000C4A6B /* Build configuration list for PBXNativeTarget "Lesson_8_Homework" */ = {
+		7488446C2F223F53000C4A6B /* Build configuration list for PBXNativeTarget "Lesson_8-9_Homework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7488446D2F223F53000C4A6B /* Debug */,
