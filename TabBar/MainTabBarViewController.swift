@@ -16,11 +16,13 @@ class MainTabBarViewController: UITabBarController {
     }
     
     func setupTabs() {
-        let firstVC = MainViewController()
+        let firstVC = HomeViewController()
         let secondVC = SecondTabBarVC()
+        let thirdVC = CalculatorViewController()
         
         let firstNavigationController = UINavigationController(rootViewController: firstVC)
         let secondNavigationController = UINavigationController(rootViewController: secondVC)
+        let thirdNavigationcontroller = UINavigationController(rootViewController: thirdVC)
         
         firstNavigationController.tabBarItem = UITabBarItem(
             title: "Home",
@@ -33,7 +35,15 @@ class MainTabBarViewController: UITabBarController {
             image: UIImage(systemName: "clock"),
             selectedImage: UIImage(systemName: "clock.fill")
             )
-            
-        viewControllers = [firstNavigationController, secondNavigationController]
+        
+        thirdNavigationcontroller.tabBarItem = UITabBarItem(
+            title: "Calculator",
+            image: UIImage(systemName: "clear"),
+            selectedImage: UIImage(systemName: "clear.fill")
+        )
+        
+        viewControllers = [thirdNavigationcontroller, firstNavigationController, secondNavigationController]
+        selectedIndex = 1
+        
     }
 }

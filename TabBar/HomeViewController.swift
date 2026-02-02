@@ -1,13 +1,13 @@
 //
-//  MainViewController.swift
-//  Lesson_8_Homework
+//  HomeViewController.swift
+//  Lesson_8-9_Homework
 //
-//  Created by Egor on 26.01.26.
+//  Created by Egor on 28.01.26.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private let label = UILabel()
     private let button1 = UIButton(type: .system)
@@ -21,30 +21,30 @@ class MainViewController: UIViewController {
         setupConstraints()
     }
     
-    func setupViewProperties() {
+    private func setupViewProperties() {
         view.backgroundColor = .systemBackground
     }
     
-    func setupSubviews() {
+    private func setupSubviews() {
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = "Привет!"
+        label.text = "My Homework"
         label.textColor = .label
         label.font = .systemFont(ofSize: 30, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        button1.setTitle("My Home Control", for: .normal)
+        button1.setTitle("Lesson 8-9", for: .normal)
         button1.setTitleColor(.label, for: .normal)
         button1.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
-        button1.addTarget(self, action: #selector(pushTapped), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(lesson89Tapped), for: .touchUpInside)
         
-        button2.setTitle("Product Card", for: .normal)
+        button2.setTitle("Lesson 10", for: .normal)
         button2.setTitleColor(.label, for: .normal)
         button2.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
-        button2.addTarget(self, action: #selector(pushProductCard), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(lesson10Tapped), for: .touchUpInside)
         
         [button1, button2].forEach {
             stackView.addArrangedSubview($0)
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
         
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -69,16 +69,21 @@ class MainViewController: UIViewController {
     
     // MARK: – Actions
     
-    @objc private func pushTapped() {
-        let vc = ViewController()
+    @objc private func lesson89Tapped() {
+        let vc = MainViewController()
         vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        let firstNav = UINavigationController(rootViewController: vc)
+        firstNav.modalPresentationStyle = .fullScreen
+        present(firstNav, animated: true)
     }
     
-    @objc private func pushProductCard() {
-        let vc = FourthViewController()
+    @objc private func lesson10Tapped() {
+        let vc = MainViewControllerL10()
         vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        let firstNav = UINavigationController(rootViewController: vc)
+        firstNav.modalPresentationStyle = .fullScreen
+        present(firstNav, animated: true)
     }
 }
+
 

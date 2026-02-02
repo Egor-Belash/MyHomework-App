@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7488446B2F223F53000C4A6B /* Exceptions for "Lesson_8_Homework" folder in "Lesson_8-9_Homework" target */ = {
+		7454AA9F2F2FE01D00E0043C /* Exceptions for "Supporting" folder in "Lesson_8-9_Homework" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,11 +21,26 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7488445B2F223F52000C4A6B /* Lesson_8_Homework */ = {
+		744F7E5B2F2A2BEF00FEFC9B /* Lesson_10_Homework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Lesson_10_Homework;
+			sourceTree = "<group>";
+		};
+		7454A9E62F2DE61400E0043C /* TabBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		7454AA9E2F2FE00800E0043C /* Supporting */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				7488446B2F223F53000C4A6B /* Exceptions for "Lesson_8_Homework" folder in "Lesson_8-9_Homework" target */,
+				7454AA9F2F2FE01D00E0043C /* Exceptions for "Supporting" folder in "Lesson_8-9_Homework" target */,
 			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		7488445B2F223F52000C4A6B /* Lesson_8_Homework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Lesson_8_Homework;
 			sourceTree = "<group>";
 		};
@@ -47,6 +62,9 @@
 			children = (
 				7488445B2F223F52000C4A6B /* Lesson_8_Homework */,
 				7488445A2F223F52000C4A6B /* Products */,
+				744F7E5B2F2A2BEF00FEFC9B /* Lesson_10_Homework */,
+				7454A9E62F2DE61400E0043C /* TabBar */,
+				7454AA9E2F2FE00800E0043C /* Supporting */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +92,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				744F7E5B2F2A2BEF00FEFC9B /* Lesson_10_Homework */,
+				7454A9E62F2DE61400E0043C /* TabBar */,
+				7454AA9E2F2FE00800E0043C /* Supporting */,
 				7488445B2F223F52000C4A6B /* Lesson_8_Homework */,
 			);
 			name = "Lesson_8-9_Homework";
