@@ -263,9 +263,11 @@ class CalculatorViewController: UIViewController {
          numberFourButton, numberFiveButton, numberSixButton, substractionButton,
          numberOneButton, numberTwoButton, numberThreeButton, additionButton,
          numberZeroButton, commaButton, equalsButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
+            
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .regular)
             $0.layer.cornerRadius = 40
+            $0.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 80).isActive = true
         }
         
         [numberSevenButton, numberEightButton, numberNineButton,
@@ -316,7 +318,6 @@ class CalculatorViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -130),
             mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
