@@ -21,7 +21,7 @@ class CountryCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .black
+        label.textColor = .label
         return label
     }()
     
@@ -29,7 +29,7 @@ class CountryCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
+        label.textColor = .label
         return label
     }()
     

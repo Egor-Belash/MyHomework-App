@@ -79,7 +79,7 @@ class MainViewControllerL13: UIViewController {
         button.setTitle("Back", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.layer.cornerRadius = 14
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.layer.borderWidth = 1
         return button
     }()
@@ -124,7 +124,7 @@ class MainViewControllerL13: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -50),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             backButton.heightAnchor.constraint(equalToConstant: 40),
             backButton.widthAnchor.constraint(equalToConstant: 80),
@@ -132,7 +132,7 @@ class MainViewControllerL13: UIViewController {
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 5),
         
-            myTableView.topAnchor.constraint(equalTo: label.bottomAnchor),
+            myTableView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 5),
             myTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             myTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

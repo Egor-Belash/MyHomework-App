@@ -45,10 +45,11 @@ class FlagView: UIView {
     private func setupSubviews() {
         layer.cornerRadius = 16
         layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
+        layer.borderColor = UIColor.label.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 4
         layer.shadowOpacity = 0.3
+        layer.shadowColor = UIColor.label.cgColor
         
         addSubview(flagLabel)
     }
