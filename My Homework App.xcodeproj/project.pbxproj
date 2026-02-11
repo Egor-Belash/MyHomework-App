@@ -26,6 +26,11 @@
 			path = Lesson_12_Homework;
 			sourceTree = "<group>";
 		};
+		740D38562F3B735C00424C83 /* Lesson_13_Homework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Lesson_13_Homework;
+			sourceTree = "<group>";
+		};
 		744F7E5B2F2A2BEF00FEFC9B /* Lesson_10_Homework */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Lesson_10_Homework;
@@ -71,6 +76,7 @@
 				7454A9E62F2DE61400E0043C /* TabBar */,
 				7454AA9E2F2FE00800E0043C /* Supporting */,
 				74020FB32F38B2280047A7F3 /* Lesson_12_Homework */,
+				740D38562F3B735C00424C83 /* Lesson_13_Homework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +105,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				74020FB32F38B2280047A7F3 /* Lesson_12_Homework */,
+				740D38562F3B735C00424C83 /* Lesson_13_Homework */,
 				744F7E5B2F2A2BEF00FEFC9B /* Lesson_10_Homework */,
 				7454A9E62F2DE61400E0043C /* TabBar */,
 				7454AA9E2F2FE00800E0043C /* Supporting */,
