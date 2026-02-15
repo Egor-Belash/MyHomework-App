@@ -12,6 +12,9 @@ class CellL14: UICollectionViewCell {
     // MARK: – Properties
     static var identifier: String = "CellL14"
     
+    private var isLiked: Bool = false
+
+    
     // MARK: – Subviews
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -54,9 +57,12 @@ class CellL14: UICollectionViewCell {
     private let likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate), for: .normal)
+//        button.setImage(UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        let config = UIButton.Configuration.plain()
+        button.configuration = config
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
         button.tintColor = .label
-        button.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .selected)
+//        button.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .selected)
 
         
         return button
@@ -137,8 +143,15 @@ class CellL14: UICollectionViewCell {
         imageDateLabel.text = model.dateOfCreation
     }
     
-    @objc private func likeButtonTapped() {
-        likeButton.isSelected.toggle()
+    @objc private func likeButtonTapped(sender: UIButton) {
+        isLiked.toggle()
+        if isLiked {
+                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                sender.tintColor = .systemRed
+            } else {
+                sender.setImage(UIImage(systemName: "heart"), for: .normal)
+                sender.tintColor = .label
+            }
 
 //        likeButton.tintColor = likeButton.isSelected ? .systemRed : .label
     }
