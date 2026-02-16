@@ -13,6 +13,7 @@ class CellL14: UICollectionViewCell {
     static var identifier: String = "CellL14"
     
     private var isLiked: Bool = false
+    private var isInFavorite: Bool = false
 
     
     // MARK: – Subviews
@@ -57,14 +58,10 @@ class CellL14: UICollectionViewCell {
     private let likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.setImage(UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        let config = UIButton.Configuration.plain()
-        button.configuration = config
+//        let config = UIButton.Configuration.plain()
+//        button.configuration = config
         button.setImage(UIImage(systemName: "heart"), for: .normal)
         button.tintColor = .label
-//        button.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .selected)
-
-        
         return button
     }()
     
@@ -72,16 +69,16 @@ class CellL14: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
-        button.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
         button.tintColor = .label
         return button
     }()
     
+    private let heartView = Heart()
+    
     private let likeIndicator: UIView = {
         let likeIndicator = UIView()
         likeIndicator.translatesAutoresizingMaskIntoConstraints = false
-        likeIndicator.backgroundColor = .systemRed
-        likeIndicator.layer.cornerRadius = 10
+        likeIndicator.backgroundColor = .clear
         return likeIndicator
     }()
     
@@ -97,6 +94,15 @@ class CellL14: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        imageView.image = nil
+        imageNameLabel.text = nil
+        imageDateLabel.text = nil
+        likeIndicator.isHidden = true
+        likeButton.isSelected = false
+        favoriteButton.isSelected = false
+    }
+    
     // MARK: – Layout
     private func setupViewProperties() {
         contentView.backgroundColor = .systemBackground
@@ -106,8 +112,11 @@ class CellL14: UICollectionViewCell {
         stackView.addArrangedSubview(likeButton)
         stackView.addArrangedSubview(favoriteButton)
         
-        likeButton.addTarget(nil, action: #selector(likeButtonTapped), for: .touchUpInside)
-//        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        
+        likeIndicator.addSubview(heartView)
+        contentView.addSubview(likeIndicator)
         
         contentView.addSubview(imageView)
         contentView.addSubview(imageNameLabel)
@@ -126,6 +135,11 @@ class CellL14: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.55),
             
+            likeIndicator.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 12),
+            likeIndicator.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 12),
+            likeIndicator.heightAnchor.constraint(equalToConstant: 10),
+            likeIndicator.widthAnchor.constraint(equalToConstant: 10),
+            
             imageDateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
             imageDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             imageDateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
@@ -141,19 +155,35 @@ class CellL14: UICollectionViewCell {
         imageView.image = UIImage(systemName: model.imageName)
         imageNameLabel.text = model.title
         imageDateLabel.text = model.dateOfCreation
+        likeIndicator.isHidden = !model.isLiked
+        isLiked.self = model.isLiked
+        isInFavorite.self = model.isInFavorite
     }
     
     @objc private func likeButtonTapped(sender: UIButton) {
         isLiked.toggle()
+        
         if isLiked {
-                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                sender.tintColor = .systemRed
-            } else {
-                sender.setImage(UIImage(systemName: "heart"), for: .normal)
-                sender.tintColor = .label
-            }
+            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            sender.tintColor = .systemRed
+        } else {
+            sender.setImage(UIImage(systemName: "heart"), for: .normal)
+            sender.tintColor = .label
+        }
 
 //        likeButton.tintColor = likeButton.isSelected ? .systemRed : .label
     }
     
+    @objc private func favoriteButtonTapped(sender: UIButton) {
+        isInFavorite.toggle()
+        if isInFavorite {
+            sender.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            sender.tintColor = .systemBlue
+        } else {
+            sender.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            sender.tintColor = .label
+        }
+    }
+    
 }
+

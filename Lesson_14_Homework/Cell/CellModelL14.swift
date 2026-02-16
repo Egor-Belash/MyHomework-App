@@ -11,6 +11,6 @@ struct CellModelL14 {
     let title: String
     let imageName: String
     let dateOfCreation: String
-    let isLiked: Bool
-    let isInfavorite: Bool
+    var isLiked: Bool
+    var isInFavorite: Bool
 }

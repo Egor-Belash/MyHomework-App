@@ -78,8 +78,8 @@
             filePath = "Lesson_14_Homework/Cell/CellL14.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "likeButtonTapped(sender:)"
             landmarkType = "7">
          </BreakpointContent>
