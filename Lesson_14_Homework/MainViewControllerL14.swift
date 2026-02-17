@@ -62,7 +62,7 @@ class MainViewControllerL14: UIViewController {
         button.layer.shadowOpacity = 0.3
         button.layer.shadowRadius = 4
         button.layer.shadowOffset = .init(width: 0, height: 2)
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.layer.borderWidth = 1
         return button
     }()
@@ -79,7 +79,7 @@ class MainViewControllerL14: UIViewController {
         button.layer.shadowOpacity = 0.3
         button.layer.shadowRadius = 4
         button.layer.shadowOffset = .init(width: 0, height: 2)
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.layer.borderWidth = 1
         return button
     }()
