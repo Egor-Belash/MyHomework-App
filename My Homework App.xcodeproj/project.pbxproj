@@ -59,6 +59,11 @@
 			path = Lesson_8_Homework;
 			sourceTree = "<group>";
 		};
+		7495DE8E2F45FBFA003E462B /* Lesson_15_Homework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Lesson_15_Homework;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 				740D38562F3B735C00424C83 /* Lesson_13_Homework */,
 				740D39BD2F420D8A00424C83 /* Lesson_14_Homework */,
 				7488445A2F223F52000C4A6B /* Products */,
+				7495DE8E2F45FBFA003E462B /* Lesson_15_Homework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +123,7 @@
 				7454A9E62F2DE61400E0043C /* TabBar */,
 				7454AA9E2F2FE00800E0043C /* Supporting */,
 				7488445B2F223F52000C4A6B /* Lesson_8_Homework */,
+				7495DE8E2F45FBFA003E462B /* Lesson_15_Homework */,
 			);
 			name = "My Homework App";
 			packageProductDependencies = (

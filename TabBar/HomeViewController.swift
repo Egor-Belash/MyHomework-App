@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     private let lesson12Button = UIButton(type: .system)
     private let lesson13Button = UIButton(type: .system)
     private let lesson14Button = UIButton(type: .system)
+    private let lesson15Button = UIButton(type: .system)
     private let stackView = UIStackView()
     
     override func viewDidLoad() {
@@ -64,9 +65,14 @@ class HomeViewController: UIViewController {
         lesson14Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         lesson14Button.addTarget(self, action: #selector(lesson14Tapped), for: .touchUpInside)
         
+        lesson15Button.setTitle("Lesson 15", for: .normal)
+        lesson15Button.setTitleColor(.label, for: .normal)
+        lesson15Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        lesson15Button.addTarget(self, action: #selector(lesson15Tapped), for: .touchUpInside)
         
         
-        [button1, button2, lesson12Button, lesson13Button, lesson14Button].forEach {
+        
+        [button1, button2, lesson12Button, lesson13Button, lesson14Button, lesson15Button].forEach {
             stackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -123,6 +129,14 @@ class HomeViewController: UIViewController {
     
     @objc private func lesson14Tapped() {
         let vc = MainViewControllerL14()
+        vc.hidesBottomBarWhenPushed = true
+        let firstNav = UINavigationController(rootViewController: vc)
+        firstNav.modalPresentationStyle = .fullScreen
+        present(firstNav, animated: true)
+    }
+    
+    @objc private func lesson15Tapped() {
+        let vc = MainViewControllerL15()
         vc.hidesBottomBarWhenPushed = true
         let firstNav = UINavigationController(rootViewController: vc)
         firstNav.modalPresentationStyle = .fullScreen

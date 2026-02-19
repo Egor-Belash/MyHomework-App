@@ -171,7 +171,6 @@ class CellL14: UICollectionViewCell {
             sender.tintColor = .label
         }
 
-//        likeButton.tintColor = likeButton.isSelected ? .systemRed : .label
     }
     
     @objc private func favoriteButtonTapped(sender: UIButton) {
