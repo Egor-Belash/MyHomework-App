@@ -43,9 +43,10 @@ final class MainViewControllerL17: UIViewController {
     private let upButton: UIButton = {
         let button = UIButton()
         button.setTitle("Up", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.label.cgColor
         button.layer.cornerRadius = 8
         return button
     }()
@@ -53,9 +54,10 @@ final class MainViewControllerL17: UIViewController {
     private let downButton: UIButton = {
         let button = UIButton()
         button.setTitle("Down", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.label.cgColor
         button.layer.cornerRadius = 8
         return button
     }()
@@ -63,20 +65,21 @@ final class MainViewControllerL17: UIViewController {
     private let leftButton: UIButton = {
         let button = UIButton()
         button.setTitle("Left", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.label.cgColor
         button.layer.cornerRadius = 8
-
         return button
     }()
     
     private let rightButton: UIButton = {
         let button = UIButton()
         button.setTitle("Right", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.label.cgColor
         button.layer.cornerRadius = 8
 
         return button
