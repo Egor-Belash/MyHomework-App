@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     private let lesson15Button = UIButton(type: .system)
     private let lesson16Button = UIButton(type: .system)
     private let lesson17Button = UIButton(type: .system)
+    private let lesson18Button = UIButton(type: .system)
     private let stackView = UIStackView()
     
     override func viewDidLoad() {
@@ -82,9 +83,15 @@ class HomeViewController: UIViewController {
         lesson17Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         lesson17Button.addTarget(self, action: #selector(lesson17Tapped), for: .touchUpInside)
         
+        lesson18Button.setTitle("Lesson 18", for: .normal)
+        lesson18Button.setTitleColor(.label, for: .normal)
+        lesson18Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        lesson18Button.addTarget(self, action: #selector(lesson18Tapped), for: .touchUpInside)
+
         
         
-        [button1, button2, lesson12Button, lesson13Button, lesson14Button, lesson15Button, lesson16Button, lesson17Button].forEach {
+        
+        [button1, button2, lesson12Button, lesson13Button, lesson14Button, lesson15Button, lesson16Button, lesson17Button, lesson18Button].forEach {
             stackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -96,7 +103,7 @@ class HomeViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -20),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -165,6 +172,14 @@ class HomeViewController: UIViewController {
     
     @objc private func lesson17Tapped() {
         let vc = MainViewControllerL17()
+        vc.hidesBottomBarWhenPushed = true
+        let firstNav = UINavigationController(rootViewController: vc)
+        firstNav.modalPresentationStyle = .fullScreen
+        present(firstNav, animated: true)
+    }
+    
+    @objc private func lesson18Tapped() {
+        let vc = MainViewControllerL18()
         vc.hidesBottomBarWhenPushed = true
         let firstNav = UINavigationController(rootViewController: vc)
         firstNav.modalPresentationStyle = .fullScreen
