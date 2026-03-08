@@ -19,7 +19,10 @@ class HomeViewController: UIViewController {
     private let lesson16Button = UIButton(type: .system)
     private let lesson17Button = UIButton(type: .system)
     private let lesson18Button = UIButton(type: .system)
+    private let lesson21Button = UIButton(type: .system)
     private let stackView = UIStackView()
+    private let secondStackView = UIStackView()
+    private let horizontalStackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +36,12 @@ class HomeViewController: UIViewController {
     }
     
     private func setupSubviews() {
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        stackView.alignment = .center
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
         label.text = "My Homework"
         label.textColor = .label
         label.font = .systemFont(ofSize: 30, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        button1.setTitle("Lesson 8-9", for: .normal)
+        button1.setTitle("Lesson 9", for: .normal)
         button1.setTitleColor(.label, for: .normal)
         button1.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         button1.addTarget(self, action: #selector(lesson89Tapped), for: .touchUpInside)
@@ -87,17 +85,42 @@ class HomeViewController: UIViewController {
         lesson18Button.setTitleColor(.label, for: .normal)
         lesson18Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         lesson18Button.addTarget(self, action: #selector(lesson18Tapped), for: .touchUpInside)
+        
+        lesson21Button.setTitle("Lesson 21", for: .normal)
+        lesson21Button.setTitleColor(.label, for: .normal)
+        lesson21Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        lesson21Button.addTarget(self, action: #selector(lesson21Tapped), for: .touchUpInside)
+        
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.alignment = .center
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        secondStackView.axis = .vertical
+        secondStackView.spacing = 20
+        secondStackView.alignment = .center
+        secondStackView.isLayoutMarginsRelativeArrangement = true
 
-        
-        
+        horizontalStackView.axis = .horizontal
+        horizontalStackView.spacing = 60
+        horizontalStackView.alignment = .top
+        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
         
         [button1, button2, lesson12Button, lesson13Button, lesson14Button, lesson15Button, lesson16Button, lesson17Button, lesson18Button].forEach {
             stackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
+        [lesson21Button].forEach {
+            secondStackView.addArrangedSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        horizontalStackView.addArrangedSubview(stackView)
+        horizontalStackView.addArrangedSubview(secondStackView)
+        
         view.addSubview(label)
-        view.addSubview(stackView)
+        view.addSubview(horizontalStackView)
         
     }
     
@@ -106,14 +129,13 @@ class HomeViewController: UIViewController {
             label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -20),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            horizontalStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            horizontalStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
         ])
     }
     
     // MARK: – Actions
-    
     @objc private func lesson89Tapped() {
         let vc = MainViewController()
         vc.hidesBottomBarWhenPushed = true
@@ -180,6 +202,14 @@ class HomeViewController: UIViewController {
     
     @objc private func lesson18Tapped() {
         let vc = MainViewControllerL18()
+        vc.hidesBottomBarWhenPushed = true
+        let firstNav = UINavigationController(rootViewController: vc)
+        firstNav.modalPresentationStyle = .fullScreen
+        present(firstNav, animated: true)
+    }
+    
+    @objc private func lesson21Tapped() {
+        let vc = MainViewControllerL21()
         vc.hidesBottomBarWhenPushed = true
         let firstNav = UINavigationController(rootViewController: vc)
         firstNav.modalPresentationStyle = .fullScreen

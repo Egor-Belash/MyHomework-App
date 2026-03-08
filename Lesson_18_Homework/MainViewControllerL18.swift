@@ -13,8 +13,6 @@ final class MainViewControllerL18: UIViewController {
     private var textFieldBottomConstraint: NSLayoutConstraint?
     private var buttonBottomConstraint: NSLayoutConstraint?
     
-
-
     // MARK: – Subviews
     private let backButton: UIButton = {
         let button = UIButton(type: .system)
@@ -118,11 +116,6 @@ final class MainViewControllerL18: UIViewController {
         ])
     }
     
-    @objc private func backButtonTapped() {
-        dismiss(animated: true)
-    }
-    
-    
     // скрытие по тапу в любой части экрана
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -130,11 +123,15 @@ final class MainViewControllerL18: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    
     private func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIApplication.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIApplication.keyboardWillHideNotification, object: nil)
+    }
+    
+    // MARK: – Actions
+    @objc private func backButtonTapped() {
+        dismiss(animated: true)
     }
     
     // скрытие по тапу в любой части экрана
@@ -164,7 +161,6 @@ final class MainViewControllerL18: UIViewController {
         }
     }
     
-    
     @objc private func buttonTapped() {
 
         if textField.text == "" {
@@ -175,7 +171,7 @@ final class MainViewControllerL18: UIViewController {
     }
 }
 
-
+// MARK: – UITextFieldDelegate
 extension MainViewControllerL18: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
