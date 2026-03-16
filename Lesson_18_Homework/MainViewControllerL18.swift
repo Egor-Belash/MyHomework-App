@@ -119,7 +119,6 @@ final class MainViewControllerL18: UIViewController {
     // скрытие по тапу в любой части экрана
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -162,12 +161,12 @@ final class MainViewControllerL18: UIViewController {
     }
     
     @objc private func buttonTapped() {
-
         if textField.text == "" {
             return
         } else {
             label.text = textField.text
         }
+        hideKeyboard()
     }
 }
 
