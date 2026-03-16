@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     private let lesson17Button = UIButton(type: .system)
     private let lesson18Button = UIButton(type: .system)
     private let lesson21Button = UIButton(type: .system)
+    private let lesson22Button = UIButton(type: .system)
     private let stackView = UIStackView()
     private let secondStackView = UIStackView()
     private let horizontalStackView = UIStackView()
@@ -91,6 +92,11 @@ class HomeViewController: UIViewController {
         lesson21Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         lesson21Button.addTarget(self, action: #selector(lesson21Tapped), for: .touchUpInside)
         
+        lesson22Button.setTitle("Lesson 22", for: .normal)
+        lesson22Button.setTitleColor(.label, for: .normal)
+        lesson22Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        lesson22Button.addTarget(self, action: #selector(lesson22Tapped), for: .touchUpInside)
+        
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.alignment = .center
@@ -111,7 +117,7 @@ class HomeViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        [lesson21Button].forEach {
+        [lesson21Button, lesson22Button].forEach {
             secondStackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -210,6 +216,14 @@ class HomeViewController: UIViewController {
     
     @objc private func lesson21Tapped() {
         let vc = MainViewControllerL21()
+        vc.hidesBottomBarWhenPushed = true
+        let firstNav = UINavigationController(rootViewController: vc)
+        firstNav.modalPresentationStyle = .fullScreen
+        present(firstNav, animated: true)
+    }
+    
+    @objc private func lesson22Tapped() {
+        let vc = MainViewControllerL22()
         vc.hidesBottomBarWhenPushed = true
         let firstNav = UINavigationController(rootViewController: vc)
         firstNav.modalPresentationStyle = .fullScreen
