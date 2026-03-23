@@ -32,7 +32,7 @@ final class MainViewControllerL24: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("+", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: .regular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 36, weight: .regular)
         button.setTitleColor(.systemBlue, for: .normal)
         return button
     }()
@@ -110,8 +110,8 @@ final class MainViewControllerL24: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             addButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -40),
-            addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            addButton.widthAnchor.constraint(equalToConstant: 30),
+            addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            addButton.trailingAnchor.constraint(equalTo: label.leadingAnchor, constant: -16),
             addButton.heightAnchor.constraint(equalToConstant: 30),
             
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),

@@ -154,7 +154,7 @@ final class AddingView: UIView {
             print(cityTimeZone)
             cityTextField.text = ""
             cityName = ""
-            cityTimeZone = "UTC 0"
+            cityTimeZone = "UTC +0"
             timeZonePicker.selectRow(10, inComponent: 0, animated: false)
         } else {
             delegate?.showAlert(title: "Укажите город", message: "Необходимо указать название города и выбрать часовой пояс")
