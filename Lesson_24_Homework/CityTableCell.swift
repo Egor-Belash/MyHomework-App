@@ -13,8 +13,8 @@ final class CityTableCell: UITableViewCell {
     static var reuseIdentifier: String {
         return String(describing: self)
     }
-    
-    private var timeZoneNumber: String = ""
+
+    private var timeZoneNumber: Int = 0
     
     // MARK: – Subviews
     private let cityNameLabel: UILabel = {
@@ -94,15 +94,15 @@ final class CityTableCell: UITableViewCell {
     func configure(with model: CityModel) {
         cityNameLabel.text = model.cityName
         timeZoneLabel.text = model.timeZone
-        timeZoneNumber = model.timeZone
         
-        operateTimeZone(timeZoneNumber)
+        if let number = Int(model.timeZone.filter { $0.isNumber }) {
+            timeZoneNumber = number
+        }
+        
+        updateTime()
     }
     
-    func operateTimeZone(_ timeZoneNumber: String) {
-        
-        guard let timeZoneNumber = Int(timeZoneNumber.filter { $0.isNumber }) else { return }
-        
+    func updateTime() {
         let now = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -115,6 +115,5 @@ final class CityTableCell: UITableViewCell {
         
         timeLabel.text = time
     }
-    
 }
 

@@ -27,6 +27,8 @@ final class MainViewControllerL24: UIViewController {
         CityModel(cityName: "Владивосток", timeZone: "UTC +10"),
     ]
     
+    private var timer: Timer?
+
     // MARK: – Subviews
     private let addButton: UIButton = {
         let button = UIButton(type: .system)
@@ -84,6 +86,11 @@ final class MainViewControllerL24: UIViewController {
         setupSubviews()
         setupConstraints()
         
+        startTimer()
+    }
+    
+    deinit {
+        timer?.invalidate()
     }
     
     // MARK: – Layout
@@ -130,6 +137,21 @@ final class MainViewControllerL24: UIViewController {
     }
     
     // MARK: – Actions
+    private func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self else { return }
+            
+            for cell in self.tableView.visibleCells {
+                if let cityCell = cell as? CityTableCell {
+                    cityCell.updateTime()
+                }
+            }
+        }
+        guard let timer else { return }
+        RunLoop.main.add(timer, forMode: .common)
+    }
+    
     @objc private func addButtonTapped() {
         view.addSubview(blurView)
         view.addSubview(addingView)
