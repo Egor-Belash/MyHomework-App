@@ -41,6 +41,11 @@
 			path = Lesson_22_Homework;
 			sourceTree = "<group>";
 		};
+		741FBDD32F8D48DB0036499D /* Lesson_31_Homework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Lesson_31_Homework;
+			sourceTree = "<group>";
+		};
 		743C7F602F545E6500AAF0EB /* Lesson_17_Homework */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Lesson_17_Homework;
@@ -125,6 +130,7 @@
 				7453C7AA2F5DAAFF0072005F /* Lesson_21_Homework */,
 				7411306F2F66C39C00CE8379 /* Lesson_22_Homework */,
 				74EF9A282F6B1FEE00F34172 /* Lesson_24_Homework */,
+				741FBDD32F8D48DB0036499D /* Lesson_31_Homework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +162,7 @@
 				740D39BD2F420D8A00424C83 /* Lesson_14_Homework */,
 				740D39C52F420DB000424C83 /* Lesson_12_Homework */,
 				7411306F2F66C39C00CE8379 /* Lesson_22_Homework */,
+				741FBDD32F8D48DB0036499D /* Lesson_31_Homework */,
 				743C7F602F545E6500AAF0EB /* Lesson_17_Homework */,
 				744F7E5B2F2A2BEF00FEFC9B /* Lesson_10_Homework */,
 				7453C72C2F59E8680072005F /* Lesson_18_Homework */,
@@ -182,7 +189,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2610;
-				LastUpgradeCheck = 2610;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					748844582F223F52000C4A6B = {
 						CreatedOnToolsVersion = 26.1.1;
@@ -350,6 +357,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -407,6 +415,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
