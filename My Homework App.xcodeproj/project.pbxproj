@@ -94,6 +94,11 @@
 			path = Lesson_16_Homework;
 			sourceTree = "<group>";
 		};
+		74D4E6702F978B4500D2EAA3 /* Lesson_32_Homework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Lesson_32_Homework;
+			sourceTree = "<group>";
+		};
 		74EF9A282F6B1FEE00F34172 /* Lesson_24_Homework */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Lesson_24_Homework;
@@ -131,6 +136,7 @@
 				7411306F2F66C39C00CE8379 /* Lesson_22_Homework */,
 				74EF9A282F6B1FEE00F34172 /* Lesson_24_Homework */,
 				741FBDD32F8D48DB0036499D /* Lesson_31_Homework */,
+				74D4E6702F978B4500D2EAA3 /* Lesson_32_Homework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +178,7 @@
 				7488445B2F223F52000C4A6B /* Lesson_8_Homework */,
 				7495DE8E2F45FBFA003E462B /* Lesson_15_Homework */,
 				7495DF332F49CA30003E462B /* Lesson_16_Homework */,
+				74D4E6702F978B4500D2EAA3 /* Lesson_32_Homework */,
 				74EF9A282F6B1FEE00F34172 /* Lesson_24_Homework */,
 			);
 			name = "My Homework App";

@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 window?.makeKeyAndVisible()
                 window?.rootViewController = MainTabBarViewController()
         
-//                let MainVC = MainViewControllerL24()
+//                let MainVC = MainViewControllerL32()
 //                window?.rootViewController = UINavigationController(rootViewController: MainVC)
 
     }
