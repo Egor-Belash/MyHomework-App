@@ -91,10 +91,13 @@ final class MainViewControllerL32: UIViewController {
     }
     
     private func setupSubviews() {
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
         textField.delegate = self
         
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         
+        view.addSubview(backButton)
         view.addSubview(titleLabel)
         view.addSubview(textField)
         view.addSubview(scoreLabel)
@@ -104,6 +107,11 @@ final class MainViewControllerL32: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -40),
+            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            backButton.widthAnchor.constraint(equalToConstant: 60),
+            backButton.heightAnchor.constraint(equalToConstant: 35),
+            
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -125,6 +133,10 @@ final class MainViewControllerL32: UIViewController {
     }
     
     // MARK: – Actions
+    @objc private func backButtonTapped() {
+        dismiss(animated: true)
+    }
+    
     @objc private func playButtonTapped() {
         print(randomNumber)
         
