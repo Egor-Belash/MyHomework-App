@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     private let lesson24Button = UIButton(type: .system)
     private let lesson31Button = UIButton(type: .system)
     private let lesson32Button = UIButton(type: .system)
+    private let lesson36Button = UIButton(type: .system)
     private let stackView = UIStackView()
     private let secondStackView = UIStackView()
     private let horizontalStackView = UIStackView()
@@ -114,6 +115,11 @@ class HomeViewController: UIViewController {
         lesson32Button.setTitleColor(.label, for: .normal)
         lesson32Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         lesson32Button.addTarget(self, action: #selector(lesson32Tapped), for: .touchUpInside)
+        
+        lesson36Button.setTitle("Lesson 36", for: .normal)
+        lesson36Button.setTitleColor(.label, for: .normal)
+        lesson36Button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        lesson36Button.addTarget(self, action: #selector(lesson36Tapped), for: .touchUpInside)
 
         stackView.axis = .vertical
         stackView.spacing = 20
@@ -135,7 +141,7 @@ class HomeViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        [lesson21Button, lesson22Button, lesson24Button, lesson31Button, lesson32Button].forEach {
+        [lesson21Button, lesson22Button, lesson24Button, lesson31Button, lesson32Button, lesson36Button].forEach {
             secondStackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -271,7 +277,14 @@ class HomeViewController: UIViewController {
         firstNav.modalPresentationStyle = .fullScreen
         present(firstNav, animated: true)
     }
-
+    
+    @objc private func lesson36Tapped() {
+        let vc = MainViewControllerL36()
+        vc.hidesBottomBarWhenPushed = true
+        let firstNav = UINavigationController(rootViewController: vc)
+        firstNav.modalPresentationStyle = .fullScreen
+        present(firstNav, animated: true)
+    }
 }
 
 
